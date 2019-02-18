@@ -4,4 +4,5 @@ class Movie < ActiveRecord::Base
         self.select("rating").uniq.each{ |x| a.push(x.rating)}
         a.sort.uniq
     end
+    
 end
