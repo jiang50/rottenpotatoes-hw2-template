@@ -20,7 +20,7 @@ class MoviesController < ApplicationController
     end
     @set_ratings = session[:set_ratings]
     if params[:sort_by]
-      session[:sort_by] = params[:sort_by] #update
+      session[:sort_by] = params[:sort_by] #update 
     end
     @sort_column = params[:sort_by]
     @movies = Movie.where({rating:  session[:set_ratings].keys }) #filter
@@ -34,27 +34,7 @@ class MoviesController < ApplicationController
       redirect_to(url_hash)
     end
     
-#    @movies = Movie.all
-    # if params[:sort_by] == nil
-    #   @movies = Movie.all
-    # else
-    #   @movies = Movie.order(params[:sort_by])
-    #   @sort_column = params[:sort_by]
-    # end
-    
-    # @movies = Movie.all.order(params[:sort_by])
-    # if params[:ratings]
-    #   @movies = Movie.where({rating: params[:ratings].keys }).order(params[:sort_by])
-    # end
-    # @sort_column = params[:sort_by]
-    # @all_ratings = Movie.all_ratings
-    # @set_ratings = params[:ratings] 
-    # if !@set_ratings
-    #   @set_ratings = Hash.new
-    #   @default = true
-    # else
-    #   @default = false
-    # end
+
     
   end
 
